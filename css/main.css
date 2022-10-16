@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: 500;
+  background-color: hsl(30deg, 38%, 92%);
+}
+
+.product__container {
+  background-color: hsl(0deg, 0%, 100%);
+  width: min(71%, 35rem);
+  margin-inline: auto;
+  margin-top: 1.8em;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.product__container h1 {
+  font-family: "Fraunces";
+  margin-bottom: 1.4rem;
+  line-height: 1;
+}
+.product__container .subheadline {
+  letter-spacing: 0.4em;
+  margin-bottom: 0.9rem;
+  margin-top: 0.5rem;
+}
+.product__container p, .product__container span {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(212deg, 21%, 14%);
+}
+.product__preview {
+  background-image: url(../images/image-product-mobile.jpg);
+  background-size: cover;
+  height: 15rem;
+}
+.product__info {
+  padding: 1.5rem;
+}
+.product__info .price-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.product__info h2 {
+  font-family: "Fraunces";
+  font-size: 2rem;
+  color: hsl(158deg, 36%, 37%);
+}
+.product__info span {
+  color: hsl(228deg, 12%, 48%);
+  text-decoration: line-through;
+}
+.product__info .cta {
+  font: inherit;
+  background-color: hsl(158deg, 36%, 37%);
+  width: 100%;
+  padding: 0.8rem;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.product__info .cta:hover {
+  background-color: hsl(212deg, 21%, 14%);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+  .product__container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .product__preview {
+    background-image: url(../images/image-product-desktop.jpg);
+    height: 100%;
+  }
+  .product__preview, .product__info {
+    flex-basis: 34rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

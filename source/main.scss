@@ -1,0 +1,120 @@
+@forward 'globals';
+
+$clr-primary-900: hsl(158, 36%, 37%);
+$clr-primary-100: hsl(30, 38%, 92%);
+$clr-neutral-900: hsl(212, 21%, 14%);
+$clr-neutral-400: hsl(228, 12%, 48%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+
+$ff-primary: 'Montserrat';
+$ff-acc: 'Fraunces';
+$fw-primary: 700;
+$fw-secondary: 500;
+$font-size: 14px;
+
+body {
+    font-family: $ff-primary;
+    font-weight: $fw-secondary;
+    background-color: $clr-primary-100;
+}
+
+.product {
+
+    &__container {
+        background-color: $clr-neutral-100;
+        width: min(71%, 35rem);
+        margin-inline: auto;
+        margin-top: 1.8em;
+        border-radius: 10px;
+        overflow: hidden;
+
+        h1 {
+            font-family: $ff-acc;
+            margin-bottom: 1.4rem;
+            line-height: 1;
+        }
+
+        .subheadline {
+            letter-spacing: .4em;
+            margin-bottom: .9rem;
+            margin-top: .5rem;
+        }
+
+        p, span {
+            font-family: $ff-primary;
+            font-size: $font-size;
+            font-weight: $fw-secondary;
+            color: $clr-neutral-900;
+        }
+    }
+
+    &__preview {
+        background-image: url(../images/image-product-mobile.jpg);
+        background-size: cover;
+        height: 15rem;
+    }
+
+    &__info {
+        padding: 1.5rem;
+
+        .price-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-family: $ff-acc;
+            font-size: 2rem;
+            color: $clr-primary-900;
+        }
+
+        span {
+            color: $clr-neutral-400;
+            text-decoration: line-through;
+        }
+
+        .cta {
+            font: inherit;
+            background-color: $clr-primary-900;
+            width: 100%;
+            padding: .8rem;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-top: 1.4rem;
+            margin-bottom: .5rem;
+
+            &:hover {
+                background-color: $clr-neutral-900;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+    .product {
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+        }
+
+        &__preview {
+            background-image: url(../images/image-product-desktop.jpg);
+            height: 100%;
+        }
+
+        &__preview, &__info {
+            flex-basis: 34rem;
+        }
+    }
+}
